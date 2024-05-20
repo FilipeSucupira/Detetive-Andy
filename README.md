@@ -10,3 +10,6 @@ Voce ajudara a por fim ao reinado de terror de Vex Vendetta?
 Ajude o Detetive Andy a solucionar o caso, fale com o Comissario, leia o Dossie, Investigue! 
 
 Que a Justica Prevaleca!
+
+
+Desenvolvedores: Filipe César, Herbert Aciolly. 
