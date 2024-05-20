@@ -1,4 +1,4 @@
-# Detetive-Andy
+# Detetive-Andy e o Terrivel Covil de Vex
 Um detetive um tanto quanto &amp;xcêtrico.
 
 Detetive Andy, um investigador experiente e respeitado, havia se aposentado apos uma longa e bem-sucedida carreira combatendo o crime. Contudo, sua revolta e insatisfacao com a criminalidade persistente na cidade o impediam de descansar verdadeiramente. Motivado por um senso de dever e justica, Andy decidiu voltar a ativa, mesmo com sua idade elevada.
