@@ -99,7 +99,7 @@ char historia[] = "\n\t\t Apos receber as instrucoes do Comissario, o Detetive A
 						  "\n"
 						  "  \n\t\t\t Detetive: As chaves, claro!"
 						  "\n"
-						  "  \n\t\t\t Gemeo Xis: HAHAHA! ISSO... e estao bem aqui comigo, pera!...ha?... cade?...cof!...CADE MINHA CHAVE CACETE?!"
+						  "  \n\t\t\t Gemeo Xis: HAHAHA! ISSO... e estao bem aqui comigo, pera!...ha?... cade?...cof!...CADE MINHA CHAVE DISGRAMA?!"
 						  "\n"
 						  "  \n\t\t\t Detetive: Parece que voce perdeu elas ne? seu bebado idiota!"
 						  "\n"
@@ -523,8 +523,8 @@ void movimentacao2() {
                                 printf("\n");
                                 printf("\n\t\t\t\t\t\t Vex Vendetta: Muito Lerdo Detetive Hahaha!");
                                 printf("\n\n");
-                                printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
-                                scanf("%d", &lixo);
+                                printf("\n\t\t\t\t\t\t Precione qualquer tecla para continuar...");
+								system("pause>null");
                                 fim2 = 1;
                                 break;
                             } else {
@@ -549,8 +549,8 @@ void movimentacao2() {
                                 printf("\n");
                                 printf("\n\t\t\t\t\t\t Vex Vendetta: Esta machucado demais para correr Detetive UHAHAHA!");
                                 printf("\n\n");
-                                printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
-                                scanf("%d", &lixo);
+                                printf("\n\t\t\t\t\t\t Precione qualquer tecla para continuar...");
+								system("pause>null");
                                 fim2 = 1;
                                 break;
                             } else {
@@ -580,8 +580,8 @@ void movimentacao2() {
                         printf("\n");
                         printf("\n\t\t\t\t\t\t Vex Vendetta: Ninguem escapa Detetive Hahaha!");
                         printf("\n\n");
-                        printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
-                        scanf("%d", &lixo);
+                        printf("\n\t\t\t\t\t\t Precione qualquer tecla para continuar...");
+								system("pause>null");
                         fim2 = 1;
                         break;
                     } else {
@@ -606,8 +606,8 @@ void movimentacao2() {
                         printf("\n");
                         printf("\n\t\t\t\t\t\t Vex Vendetta: Esta machucado demais para correr Detetive UHAHAHA!");
                         printf("\n\n");
-                        printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
-                        scanf("%d", &lixo);
+                        printf("\n\t\t\t\t\t\t Precione qualquer tecla para continuar...");
+								system("pause>null");
                         fim2 = 1;
                         break;
                     } else {
@@ -635,8 +635,8 @@ void movimentacao2() {
                         printf("\n");
                         printf("\n\t\t\t\t\t\t Vex Vendetta: Muito Lerdo Detetive Hahaha!");
                         printf("\n\n");
-                        printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
-                        scanf("%d", &lixo);
+                        printf("\n\t\t\t\t\t\t Precione qualquer tecla para continuar...");
+								system("pause>null");
                         fim2 = 1;
                         break;
                     } else {
@@ -661,8 +661,8 @@ void movimentacao2() {
                         printf("\n");
                         printf("\n\t\t\t\t\t\t Vex Vendetta: Esta machucado demais para correr Detetive UHAHAHA!");
                         printf("\n\n");
-                        printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
-                        scanf("%d", &lixo);
+                        printf("\n\t\t\t\t\t\t Precione qualquer tecla para continuar...");
+								system("pause>null");
                         fim2 = 1;
                         break;
                     } else {
@@ -690,8 +690,8 @@ void movimentacao2() {
                         printf("\n");
                         printf("\n\t\t\t\t\t\t Vex Vendetta: Detetive Andy, espara mais de voce!");
                         printf("\n\n");
-                        printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
-                        scanf("%d", &lixo);
+                        printf("\n\t\t\t\t\t\t Precione qualquer tecla para continuar...");
+								system("pause>null");
                         fim2 = 1;
                         break;
                     } else {
@@ -716,8 +716,8 @@ void movimentacao2() {
                         printf("\n");
                         printf("\n\t\t\t\t\t\t Vex Vendetta: Esta machucado demais para correr Detetive UHAHAHA!");
                         printf("\n\n");
-                        printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
-                        scanf("%d", &lixo);
+                        printf("\n\t\t\t\t\t\t Precione qualquer tecla para continuar...");
+								system("pause>null");
                         fim2 = 1;
                         break;
                     } else {
@@ -862,8 +862,8 @@ void movimentacao3() {
                                 printf("\n");
                                 printf("\n\t\t\t\t\t\t Vex Vendetta: Nao a como escapar de mim Detetive Andy!");
                                 printf("\n\n");
-                                printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
-                                scanf("%d", &lixo);
+                                printf("\n\t\t\t\t\t\t Precione qualquer tecla para continuar...");
+								system("pause>null");
                                 fim3 = 1;
                                 break;
                             } else {
@@ -888,8 +888,8 @@ void movimentacao3() {
                                 printf("\n");
                                 printf("\n\t\t\t\t\t\t Vex Vendetta: Esta machucado demais para correr Detetive UHAHAHA!");
                                 printf("\n\n");
-                                printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
-                                scanf("%d", &lixo);
+                                printf("\n\t\t\t\t\t\t Precione qualquer tecla para continuar...");
+								system("pause>null");
                                 fim3 = 1;
                                 break;
                             } else {
@@ -919,8 +919,8 @@ void movimentacao3() {
                         printf("\n");
                         printf("\n\t\t\t\t\t\t Vex Vendetta: Nao a como escapar de mim Detetive Andy!");
                         printf("\n\n");
-                        printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
-                        scanf("%d", &lixo);
+                        printf("\n\t\t\t\t\t\t Precione qualquer tecla para continuar...");
+								system("pause>null");
                         fim3 = 1;
                         break;
                     } else {
@@ -945,8 +945,8 @@ void movimentacao3() {
                         printf("\n");
                         printf("\n\t\t\t\t\t\t Vex Vendetta: Esta machucado demais para correr Detetive UHAHAHA!");
                         printf("\n\n");
-                        printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
-                        scanf("%d", &lixo);
+                        printf("\n\t\t\t\t\t\t Precione qualquer tecla para continuar...");
+								system("pause>null");
                         fim3 = 1;
                         break;
                     } else {
@@ -974,8 +974,8 @@ void movimentacao3() {
                         printf("\n");
                         printf("\n\t\t\t\t\t\t Vex Vendetta: Nao a como escapar de mim Detetive Andy!");
                         printf("\n\n");
-                        printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
-                        scanf("%d", &lixo);
+                        printf("\n\t\t\t\t\t\t Precione qualquer tecla para continuar...");
+								system("pause>null");
                         fim3 = 1;
                         break;
                     } else {
@@ -1000,8 +1000,8 @@ void movimentacao3() {
                         printf("\n");
                         printf("\n\t\t\t\t\t\t Vex Vendetta: Esta machucado demais para correr Detetive UHAHAHA!");
                         printf("\n\n");
-                        printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
-                        scanf("%d", &lixo);
+                        printf("\n\t\t\t\t\t\t Precione qualquer tecla para continuar...");
+								system("pause>null");
                         fim3 = 1;
                         break;
                     } else {
@@ -1029,8 +1029,8 @@ void movimentacao3() {
                         printf("\n");
                         printf("\n\t\t\t\t\t\t Vex Vendetta: Nao a como escapar de mim Detetive Andy!");
                         printf("\n\n");
-                        printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
-                        scanf("%d", &lixo);
+                        printf("\n\t\t\t\t\t\t Precione qualquer tecla para continuar...");
+								system("pause>null");
                         fim3 = 1;
                         break;
                     } else {
@@ -1055,8 +1055,8 @@ void movimentacao3() {
                         printf("\n");
                         printf("\n\t\t\t\t\t\t Vex Vendetta: Nao a como escapar de mim Detetive Andy!");
                         printf("\n\n");
-                        printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
-                        scanf("%d", &lixo);
+                        printf("\n\t\t\t\t\t\t Precione qualquer tecla para continuar...");
+								system("pause>null");
                         fim3 = 1;
                         break;
                     } else {
@@ -1506,7 +1506,7 @@ if(op == 'c'){
 	printf("- (*) As paredes: feitas de concreto sao impenetraveis.(*)\n");
 	printf("- (>) Dutos: Conduzem a diferentes areas do covil. Podem ser utilizados para se movimentar rapidamente ou encontrar pistas adicionais.\n\n");
 	printf("Aviso:\n\n");
-	printf("- Evite o confronto direto com os capangas sempre que possivel.\n");
+	printf("- Evite o confronto direto com os capangas e o proprio Vex, use com sabedoria suas deducoes (3 vidas) para encotrar a melhor forma de resolver o caso.\n");
 	printf("- Lembre-se de priorizar sua seguranca em todas as circunstancias.\n\n");
 	printf("Boa sorte, Detetive Andy. Que a justica prevaleca neste caso complicado.\n");
 	printf("\n");
