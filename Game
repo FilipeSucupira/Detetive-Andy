@@ -1,0 +1,1568 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <locale.h>
+#include <windows.h>
+#include <conio.h>
+#include <unistd.h>
+#include <pthread.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+
+int main(int argc, char *argv[]) {
+	
+char op;
+char dep;
+
+
+void investigacao()
+{
+	//fazer a primeira fase do jogo
+char matriz1 [10][10];
+char matriz2 [20][20];
+char matriz3 [40][40];
+
+  int fim1 = 0;
+  int fim2 = 0;
+  int fim3 = 0;
+  
+  char tecla1;
+  char tecla2;
+  char tecla3;
+  
+  int x=5;
+  int y=5;
+  
+  int x2=9;
+  int y2=9;
+  
+  int x3=20;
+  int y3=20;
+  
+  char chave1='@';
+  char chave2=' ';
+  char chave3=' ';
+  	
+  char porta1='D';
+  char porta2='D';
+  char porta3='D';
+
+  char botao2='O';
+  char botao3='O';
+  	
+  char espinho2='#';
+  char espinho3='#';
+  	
+  int XX=8;
+  int XY=5;
+  
+  int XX2=2;
+  int XY2=18;
+  
+  int XX3=5;
+  int XY3=10;
+	
+  int vidas=3;
+  int lixo;
+  
+  char duto= '<';
+  
+
+
+  //Primeira fase
+void historinha() //Funcao historia inicial
+{
+	  
+char historia[] = "\n\t\t Apos receber as instrucoes do Comissario, o Detetive Andy dirigiu-se ao local indicado como paradeiro do Covil de Vex.     "
+                  "\n\t\t Ao chegar notou um ar sombrio e sinistro, condizente com os detalhes fornecidos pela testemunha.                           "    
+                  "\n\t\t Enquanto explorava os arredores, avistou um duto escondido e marcado com o simbolo (>) que lhe parecia familiar            "   
+                  "\n\t\t Consultando suas anotacoes, confirmou que aquele era o mesmo simbolo mencionado no dossie do caso.                         "   
+                  "\n\t\t Nao havia duvidas que ali poderia ser o possivel esconderijo secreto, então Andy decidiu investigar.                       "   
+                  "\n\t\t Sem hesitar, ele adentrou o duto, descendo por uma passagem estreita cheia de arames, laminas e canos enferrujados.   	 "   
+                  "\n\t\t    "   
+                  "\n\t\t Ao adentrar cada vez mais, encontra um pedaço de vestimenta rasgada, ao se aproximar o duto se rompe sob seus pes fazendo      "   
+                  "\n\t\t ele cair em um quarto pequeno e sujo, ao levantar desnorteado percebe que o coldre com sua arma ficou preso                    "   
+                  "\n\t\t entre as ferragens do Duto... Ele tentou pular para alcanca-lo e nao conseguiu. Foi entao que escutou um barulho vindo de tras." 
+                  "\n\t\t Ao virar-se viu uma montanha coberta de garrafas de cerveja e embalagens de pizza e uma voz alta e rouca saindo de la:         " 
+                  		"\n"
+                        "\n"
+                          "  \n\t\t\t Voz Desconhecida: JA FALEI! cof!cof!... sai daqui mano Xis, to de ressaca."
+                          "\n"
+	                      "  \n\t\t\t Detetive Andy: Droga, ele e um dos irmaos Xis?!"
+	                      "\n"
+						  "  \n\t\t\t Gemeo Xis: QUE MERDA! cof... voce nao e o mano Xis, cof!cof!... como chegou ate aqui? ODEIO INTRUSOS!"
+						  "\n"
+						  "  \n\t\t\t Detetive Andy: Ele levantou! Que brutamontes! mas ainda esta sonolento, preciso sair daqui!"
+						  "\n"
+						  "  \n\t\t\t Gemeo Xis: SAIR DAQUI?! Voce esta preso comigo hahaha!, nao tem como fugir! apenas eu e meu irmao temos a chave do quarto!"
+						  "\n"
+						  "  \n\t\t\t Detetive: As chaves, claro!"
+						  "\n"
+						  "  \n\t\t\t Gemeo Xis: HAHAHA! ISSO... e estao bem aqui comigo, pera!...ha?... cade?...cof!...CADE MINHA CHAVE CACETE?!"
+						  "\n"
+						  "  \n\t\t\t Detetive: Parece que voce perdeu elas ne? seu bebado idiota!"
+						  "\n"
+						  "  \n\t\t\t Gemeo Xis: O QUE DISSE? AGGGRR VOU TE MATAR SEU- COF!... SEU DESGRACADO!"
+						  "\n"
+                          "\n"
+						  "\n\t\t\t\t O Detetive ja tinha avistado a chave no chao perto do Gemeo Xis que estava muito furioso para perceber:" 
+						  "\n\t\t\t\t Detetive Andy: Ele caiu direto! agora e minha chance, preciso pega-la e escapar por aquela porta!"
+						 ;
+						 
+						
+	
+	int h;
+		    for (h = 0; historia[h] != '\0'; h++) {
+		        printf("%c", historia[h]);
+		        fflush(stdout);
+		        usleep(30000);
+		    }
+		    void aguardarEnter() {
+    while(getchar() != '\n'); // Espera até que o usuário pressione ENTER
+}
+			printf("\n");
+		    printf("\n\t\t\t\t\t\t -----------------------------------------------------------------------");
+		    printf("\n\t\t\t\t\t\t Objetivo --> Nao seja capturado pelo Gemeo Xis, consiga a chave e fuja!");
+		    printf("\n\t\t\t\t\t\t ---------------------------(Precione ENTER)----------------------------");
+		    aguardarEnter();
+} 
+
+
+void mapa1(char matriz1[10][10],int x, int y, char chave1, char porta1, int XY, int XX) //Funcao Primeira Fase
+{
+	int i,j;
+
+	for(i = 0; i < 10; i++) 
+	{
+		for(j = 0; j < 10; j++) 
+		{
+			if (i==XY && j==XX ) 
+			{
+				matriz1[i][j]='X';
+			}
+			else 
+			{
+				if(i==y && j==x) 
+				{
+					matriz1[i][j]='&';
+				}
+				else 
+				{
+					if(i==0 && j==5) 
+					{
+						matriz1[i][j]=porta1;
+					}
+					else 
+					{
+						if (i==7 && j==7) 
+						{
+							matriz1[i][j]=chave1;
+						}
+						else 
+						{
+
+							if(i==0 || i==9) 
+							{
+								matriz1[i][j]='*';
+								printf("\n");
+							}
+							else 
+							{
+								if(j==0 || j==9) 
+								{
+									matriz1[i][j]='*';
+								}
+								else 
+								{
+									matriz1[i][j]=' ';
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	system("clear || cls");
+	printf("\n\n\n\n\n\n\n\n");
+	for(i = 0; i < 10; i++) 
+	{
+		printf("\t\t\t\t\t\t\t");
+		for(j = 0; j < 10; j++) 
+		{
+			printf(" ");
+			printf("%c", matriz1[i][j]);
+		}
+		printf("\n");
+	}
+}
+
+//Inimigo X - Movimento1
+void XMove1() 
+{
+	int X1;
+	srand(time(NULL));
+	X1 = 1 + (rand() % 4);
+	
+	switch (X1) 
+	{
+		case 1:
+			if(XY==1) 
+			{} 
+			else 
+			{
+				XY--;
+			}
+			break;
+		case 2:
+			if(XY==8) 
+			{} 
+			else 
+			{
+				XY++;
+			}
+			break;
+		case 3:
+			if(XX==1) 
+			{} 
+			else 
+			{
+				XX--;
+			}
+			break;
+		case 4:
+			if(XX==8) 
+			{} 
+			else 
+			{
+				XX++;
+			}
+			break;
+	}
+}
+
+//Detetive Andy - Movimento1
+void movimentacao1() 
+{
+	char tecla1;
+	tecla1 = getch();
+	switch(tecla1)
+	{
+		case 'w':
+			if((y==1 && matriz1[0][5]=='D')&& (x!=5 || x==5)) 
+			{} 
+			else 
+			{
+				if(y==1 && x!=5) 
+				{}
+				else 
+				{
+					y--;
+					XMove1();
+					if(y==0 && x==5) 
+					{
+						fim1=1;
+					} 
+					else {}
+						if (x==XX && y==XY) 
+						{
+							vidas--;
+							x=5;
+							y=5;
+							chave1='@';
+							porta1='D';
+							XX=8;
+							XY=8;
+								if (vidas==0) 
+								{
+									printf("\n\n");
+								printf("\n\t\t\t\t\t\t VOCE FOI PEGO!");
+								printf("\n");
+								printf("\n\t\t\t\t\t\t Gemeo Xis: Achou mesmo que ia escapar? hahaha!...");
+								printf("\n\n");
+								printf("\n\t\t\t\t\t\t Precione qualquer tecla para continuar...");
+								system("pause>null");
+								fim1=1;
+								break;
+								} 
+								else {}
+						} 
+						else {}							
+				}
+			}
+			break;
+		case 's':
+			if(y==8) 
+			{} 
+			else 
+			{
+				y++;
+				XMove1();
+					if (x==XX && y==XY) 
+					{
+						vidas--;
+						x=5;
+						y=5;
+						chave1='@';
+						porta1='D';
+						XX=8;
+						XY=8;
+							if (vidas==0) 
+							{
+									printf("\n\n");
+								printf("\n\t\t\t\t\t\t VOCE FOI PEGO!");
+								printf("\n");
+								printf("\n\t\t\t\t\t\t Gemeo Xis: Intruso capturado com sucesso! hahaha!...");
+								printf("\n\n");
+								printf("\n\t\t\t\t\t\t Precione qualquer tecla para continuar...");
+								system("pause>null");
+								fim1=1;
+								break;
+							} 
+							else {}
+					} 
+					else {}	
+			break;
+		case 'a':
+			if(x==1) 
+			{} 
+			else 
+			{
+				x--;
+				XMove1();
+					if (x==XX && y==XY) 
+					{
+						vidas--;
+						x=5;
+						y=5;
+						chave1='@';
+						porta1='D';
+						XX=8;
+						XY=8;
+							if (vidas==0) 
+							{
+									printf("\n\n");
+								printf("\n\t\t\t\t\t\t VOCE FOI PEGO!");
+								printf("\n");
+								printf("\n\t\t\t\t\t\t Gemeo Xis: HAHAHAHA! te peguei idiota!...");
+								printf("\n\n");
+								printf("\n\t\t\t\t\t\t Precione qualquer tecla para continuar...");
+								system("pause>null");
+								fim1=1;
+								break;
+							} 
+							else {}
+					} 
+					else {}	
+			}							
+			break;
+		case 'd':
+			if(x==8) 
+			{} 
+			else 
+			{
+				x++;
+				XMove1();
+					if (x==XX && y==XY) 
+					{
+						vidas--;
+						x=5;
+						y=5;
+						chave1='@';
+						porta1='D';
+						XX=8;
+						XY=8;
+							if (vidas==0) 
+							{
+									printf("\n\n");
+								printf("\n\t\t\t\t\t\t VOCE FOI PEGO!");
+								printf("\n");								
+								printf("\n\t\t\t\t\t\t Gemeo Xis: HAHAHAHA! te peguei idiota!...");
+								printf("\n\n");
+								printf("\n\t\t\t\t\t\t Precione qualquer tecla para continuar...");
+								system("pause>null");
+								fim1=1;
+								break;
+							} 
+							else {}
+					} 
+					else {}	
+			}
+			break;
+		case 'i':
+			if(x==8 && y==8) 
+			{
+				chave1='@';
+			} 
+			else {}
+				if (x==7 && y==7 && chave1=='@') 
+				{
+						printf("\n\n\n");					
+					    Sleep(20);
+					   printf("\t\t\t\t\t\tDetetive Andy: Consegui a Chave!\n");
+					   printf("\n");
+					   printf("\t\t\t\t\t\tGemeo Xis: MINHA CHAVE! COF!... maldito!\n");
+						Sleep(3000);
+						system("cls");
+    					system("color 07");
+					porta1='=';
+					chave1=' ';
+				}
+				default:
+				break;
+			}
+	}
+}
+
+
+//Segunda Fase
+void mapa2(char matriz2[20][20], int x2, int y2, char chave2, char porta2, char botao2, int XY2, int XX2, char espinho2) {
+    system("color 0C");
+    int i, j;
+
+    for (i = 0; i < 20; i++) {
+        for (j = 0; j < 20; j++) {
+            if (i == XY2 && j == XX2) {
+                matriz2[i][j] = 'V';
+            } else if (i == y2 && j == x2) {
+                matriz2[i][j] = '&';
+            } else if (i == 0 && j == 15) {
+                matriz2[i][j] = porta2;
+            } else if (i == 13 && j == 9) {
+                matriz2[i][j] = botao2;
+            } else if (i == 7 && j == 7) {
+                matriz2[i][j] = chave2;
+            } else if (i == 0 || i == 19) {
+                matriz2[i][j] = '*';
+                printf("\n");
+            } else if (j == 0 || j == 19) {
+                matriz2[i][j] = '*';
+            } else {
+                matriz2[i][j] = ' ';
+                // espinhos
+                if ((i == 7 && j == 6) || (i == 6 && j == 7) || (i == 7 && j == 8) || (i == 1 && j == 9) || (i == 1 && j == 11) || (i == 1 && j == 13)) {
+                    matriz2[i][j] = '#';
+                }
+                if ((i == 26 && j == 3) || (i == 26 && j == 4) || (i == 2 && j == 15) || (i == 1 && j == 16) || (i == 2 && j == 16) || (i == 2 && j == 13)) {
+                    matriz2[i][j] = '#';
+                }
+                // labirinto
+                if ((i == 14 && j == 8) || (i == 13 && j == 8) || (i == 13 && j == 10)) {
+                    matriz2[i][j] = '#';
+                }
+                if ((i == 14 && j == 8) || (i == 14 && j == 9) || (i == 14 && j == 10)) {
+                    matriz2[i][j] = '#';
+                }
+                if (i == 14 && j == 9) {
+                    matriz2[i][j] = '#';
+                }
+            }
+        }
+    }
+
+    system("clear || cls");
+    printf("\n\n\n\n\n\n\n\n");
+    for (i = 0; i < 20; i++) {
+        printf("\t\t\t\t\t\t\t");
+        for (j = 0; j < 20; j++) {
+            printf(" ");
+            printf("%c", matriz2[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+// Inimigo V - Movimento2
+void XMove2(int x2, int y2, int *XX2, int *XY2) {
+    // Calcula a diferença entre as posições do inimigo e do jogador
+    int diffX = x2 - *XX2;
+    int diffY = y2 - *XY2;
+
+    // Move o inimigo em direção ao jogador
+    if (abs(diffX) > abs(diffY)) {
+        if (diffX > 0 && *XX2 < 18) // Move para a direita
+            (*XX2)++;
+        else if (diffX < 0 && *XX2 > 1) // Move para a esquerda
+            (*XX2)--;
+    } else {
+        if (diffY > 0 && *XY2 < 18) // Move para baixo
+            (*XY2)++;
+        else if (diffY < 0 && *XY2 > 1) // Move para cima
+            (*XY2)--;
+    }
+}
+
+// Detetive Andy - Movimento2
+void movimentacao2() {
+    char tecla2;
+    tecla2 = getch();
+    switch (tecla2) {
+        case 'w':
+            if ((y2 == 1 && matriz2[0][15] == 'D') && (x2 != 15 || x2 == 15)) {
+            } else {
+                if (y2 == 1 && x2 != 15) {
+                } else {
+                    y2--;
+                    XMove2(x2, y2, &XX2, &XY2);
+                    if (y2 == 0 && x2 == 15) {
+                        fim2 = 1;
+                    } else {
+                        if (x2 == XX2 && y2 == XY2) {
+                            vidas--;
+                            x2 = 9;
+                            y2 = 9;
+                            chave2 = ' ';
+                            porta2 = 'D';
+                            botao2 = 'O';
+                            XX2 = 2;
+                            XY2 = 18;
+                            if (vidas == 0) {
+                                printf("\n\n");
+                                printf("\n\t\t\t\t\t\t VOCE FOI PEGO!");
+                                printf("\n");
+                                printf("\n\t\t\t\t\t\t Vex Vendetta: Muito Lerdo Detetive Hahaha!");
+                                printf("\n\n");
+                                printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
+                                scanf("%d", &lixo);
+                                fim2 = 1;
+                                break;
+                            } else {
+                            }
+                        } else {
+                        }
+                        // verificar o dano do espinho
+                        if (matriz2[y2][x2] == espinho2) {
+                            printf("\t\t\t\t\t\tDetetive Andy: Ai! espinhos, devo tomar mais cuidado!\n");
+                            Sleep(900);
+                            vidas--;
+                            x2 = 9;
+                            y2 = 9;
+                            chave2 = ' ';
+                            porta2 = 'D';
+                            botao2 = 'O';
+                            XX2 = 2;
+                            XY2 = 18;
+                            if (vidas == 0) {
+                                printf("\n\n");
+                                printf("\n\t\t\t\t\t\t VOCE ESTA MUITO FERIDO!");
+                                printf("\n");
+                                printf("\n\t\t\t\t\t\t Vex Vendetta: Esta machucado demais para correr Detetive UHAHAHA!");
+                                printf("\n\n");
+                                printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
+                                scanf("%d", &lixo);
+                                fim2 = 1;
+                                break;
+                            } else {
+                            }
+                        }
+                    }
+                }
+            }
+            break;
+        case 's':
+            if (y2 == 18) {
+            } else {
+                y2++;
+                XMove2(x2, y2, &XX2, &XY2);
+                if (x2 == XX2 && y2 == XY2) {
+                    vidas--;
+                    x2 = 9;
+                    y2 = 9;
+                    chave2 = ' ';
+                    porta2 = 'D';
+                    botao2 = 'O';
+                    XX2 = 2;
+                    XY2 = 18;
+                    if (vidas == 0) {
+                        printf("\n\n");
+                        printf("\n\t\t\t\t\t\t VOCE FOI PEGO!");
+                        printf("\n");
+                        printf("\n\t\t\t\t\t\t Vex Vendetta: Ninguem escapa Detetive Hahaha!");
+                        printf("\n\n");
+                        printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
+                        scanf("%d", &lixo);
+                        fim2 = 1;
+                        break;
+                    } else {
+                    }
+                } else {
+                }
+                // verificar o dano do espinho
+                if (matriz2[y2][x2] == espinho2) {
+                    printf("\t\t\t\t\t\tDetetive Andy: Ai! espinhos, devo tomar mais cuidado!\n");
+                    Sleep(900);
+                    vidas--;
+                    x2 = 9;
+                    y2 = 9;
+                    chave2 = ' ';
+                    porta2 = 'D';
+                    botao2 = 'O';
+                    XX2 = 2;
+                    XY2 = 18;
+                    if (vidas == 0) {
+                        printf("\n\n");
+                        printf("\n\t\t\t\t\t\t VOCE ESTA MUITO FERIDO!");
+                        printf("\n");
+                        printf("\n\t\t\t\t\t\t Vex Vendetta: Esta machucado demais para correr Detetive UHAHAHA!");
+                        printf("\n\n");
+                        printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
+                        scanf("%d", &lixo);
+                        fim2 = 1;
+                        break;
+                    } else {
+                    }
+                }
+            }
+            break;
+        case 'a':
+            if (x2 == 1) {
+            } else {
+                x2--;
+                XMove2(x2, y2, &XX2, &XY2);
+                if (x2 == XX2 && y2 == XY2) {
+                    vidas--;
+                    x2 = 9;
+                    y2 = 9;
+                    chave2 = ' ';
+                    porta2 = 'D';
+                    botao2 = 'O';
+                    XX2 = 2;
+                    XY2 = 18;
+                    if (vidas == 0) {
+                        printf("\n\n");
+                        printf("\n\t\t\t\t\t\t VOCE FOI PEGO!");
+                        printf("\n");
+                        printf("\n\t\t\t\t\t\t Vex Vendetta: Muito Lerdo Detetive Hahaha!");
+                        printf("\n\n");
+                        printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
+                        scanf("%d", &lixo);
+                        fim2 = 1;
+                        break;
+                    } else {
+                    }
+                } else {
+                }
+                // verificar o dano do espinho
+                if (matriz2[y2][x2] == espinho2) {
+                    printf("\t\t\t\t\t\tDetetive Andy: Ai! espinhos, devo tomar mais cuidado!\n");
+                    Sleep(900);
+                    vidas--;
+                    x2 = 9;
+                    y2 = 9;
+                    chave2 = ' ';
+                    porta2 = 'D';
+                    botao2 = 'O';
+                    XX2 = 2;
+                    XY2 = 18;
+                    if (vidas == 0) {
+                        printf("\n\n");
+                        printf("\n\t\t\t\t\t\t VOCE ESTA MUITO FERIDO!");
+                        printf("\n");
+                        printf("\n\t\t\t\t\t\t Vex Vendetta: Esta machucado demais para correr Detetive UHAHAHA!");
+                        printf("\n\n");
+                        printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
+                        scanf("%d", &lixo);
+                        fim2 = 1;
+                        break;
+                    } else {
+                    }
+                }
+            }
+            break;
+        case 'd':
+            if (x2 == 18) {
+            } else {
+                x2++;
+                XMove2(x2, y2, &XX2, &XY2);
+                if (x2 == XX2 && y2 == XY2) {
+                    vidas--;
+                    x2 = 9;
+                    y2 = 9;
+                    chave2 = ' ';
+                    porta2 = 'D';
+                    botao2 = 'O';
+                    XX2 = 2;
+                    XY2 = 18;
+                    if (vidas == 0) {
+                        printf("\n\n");
+                        printf("\n\t\t\t\t\t\t VOCE FOI PEGO!");
+                        printf("\n");
+                        printf("\n\t\t\t\t\t\t Vex Vendetta: Detetive Andy, espara mais de voce!");
+                        printf("\n\n");
+                        printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
+                        scanf("%d", &lixo);
+                        fim2 = 1;
+                        break;
+                    } else {
+                    }
+                } else {
+                }
+                // verificar o dano do espinho
+                if (matriz2[y2][x2] == espinho2) {
+                    printf("\t\t\t\t\t\tDetetive Andy: Ai! espinhos, devo tomar mais cuidado!\n");
+                    Sleep(900);
+                    vidas--;
+                    x2 = 9;
+                    y2 = 9;
+                    chave2 = ' ';
+                    porta2 = 'D';
+                    botao2 = 'O';
+                    XX2 = 2;
+                    XY2 = 18;
+                    if (vidas == 0) {
+                        printf("\n\n");
+                        printf("\n\t\t\t\t\t\t VOCE ESTA MUITO FERIDO!");
+                        printf("\n");
+                        printf("\n\t\t\t\t\t\t Vex Vendetta: Esta machucado demais para correr Detetive UHAHAHA!");
+                        printf("\n\n");
+                        printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
+                        scanf("%d", &lixo);
+                        fim2 = 1;
+                        break;
+                    } else {
+                    }
+                }
+            }
+            break;
+        case 'i':
+            if (x2 == 9 && y2 == 13) {
+                chave2 = '@';
+                botao2 = ' ';
+            } else {
+                if (x2 == 7 && y2 == 7 && chave2 == '@') {
+                    printf("\n\n\n");
+                    Sleep(20);
+                    printf("\t\t\t\t\t\tConsegui a chave!\n");
+                    Sleep(900);
+                    system("cls");
+                    system("color 0F");
+                    porta2 = '=';
+                    chave2 = ' ';
+                }
+                break;
+            }
+        default:
+            break;
+    }
+}
+
+
+
+//Terceira Fase  
+void mapa3(char matriz3[40][40], int x3, int y3, char chave3, char porta3, char botao3, int XY3, int XX3, char espinho2) {
+    system("color 0D");
+    int i, j;
+
+    for (i = 0; i < 40; i++) {
+        for (j = 0; j < 40; j++) {
+            if (i == XY3 && j == XX3) {
+                matriz3[i][j] = 'V';
+            } else if (i == y3 && j == x3) {
+                matriz3[i][j] = '&';
+            } else if (i == 0 && j == 15) {
+                matriz3[i][j] = porta3;
+            } else if (i == 13 && j == 9) {
+                matriz3[i][j] = botao3;
+            } else if (i == 7 && j == 7) {
+                matriz3[i][j] = chave3;
+            } else if (i == 35 && j == 35) { // Adiciona teleporte no mapa
+                matriz3[i][j] = '>';
+            } else if (i == 0 || i == 39) {
+                matriz3[i][j] = '*';
+                printf("\n");
+            } else if (j == 0 || j == 39) {
+                matriz3[i][j] = '*';
+            } else {
+                matriz3[i][j] = ' ';
+                // espinhos
+                if ((i == 1 && j == 2) || (i == 2 && j == 2) || (i == 3 && j == 2) || (i == 4 && j == 2) || (i == 1 && j == 4) || (i == 2 && j == 4) || (i == 3 && j == 4) || (i == 4 && j == 4)) {
+                    matriz3[i][j] = '#';
+                }
+                if ((i == 26 && j == 3) || (i == 26 && j == 4) || (i == 26 && j == 5) || (i == 2 && j == 7) || (i == 2 && j == 7) || (i == 2 && j == 13)) {
+                    matriz3[i][j] = '#';
+                }
+                // labirinto
+                if ((i == 27 && j == 32) || (i == 28 && j == 32) || (i == 29 && j == 32) || (i == 30 && j == 32) || (i == 31 && j == 32) || (i == 32 && j == 32) || (i == 33 && j == 32) || (i == 34 && j == 32) || (i == 35 && j == 32) || (i == 36 && j == 32)) {
+                    matriz3[i][j] = '#';
+                }
+                if ((i == 27 && j == 34) || (i == 28 && j == 34) || (i == 29 && j == 34) || (i == 30 && j == 34) || (i == 31 && j == 34) || (i == 32 && j == 34) || (i == 33 && j == 34) || (i == 34 && j == 34)) {
+                    matriz3[i][j] = '#';
+                }
+                if (i == 36 && j == 33) {
+                    matriz3[i][j] = '#';
+                }
+                if ((i == 34 && j == 35) || (i == 34 && j == 36) || (i == 34 && j == 37) || (i == 34 && j == 38) || (i == 36 && j == 33) || (i == 36 && j == 34) || (i == 36 && j == 35) || (i == 36 && j == 36) || (i == 36 && j == 37) || (i == 36 && j == 38)) {
+                    matriz3[i][j] = '#';
+                }
+                
+            }
+        }
+    }
+
+    system("clear || cls");
+    printf("\n\n");
+    for (i = 0; i < 40; i++) {
+        printf("\t\t\t\t");
+        for (j = 0; j < 40; j++) {
+            printf(" ");
+            printf("%c", matriz3[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+// Inimigo V - Movimento3
+void XMove3(int x3, int y3, int *XX3, int *XY3) {
+    // Calcula a diferença entre as posições do inimigo e do jogador
+    int diffX = x3 - *XX3;
+    int diffY = y3 - *XY3;
+
+    // Move o inimigo em direção ao jogador
+    if (abs(diffX) > abs(diffY)) {
+        if (diffX > 0 && *XX3 < 38) // Move para a direita
+            (*XX3)++;
+        else if (diffX < 0 && *XX3 > 1) // Move para a esquerda
+            (*XX3)--;
+    } else {
+        if (diffY > 0 && *XY3 < 38) // Move para baixo
+            (*XY3)++;
+        else if (diffY < 0 && *XY3 > 1) // Move para cima
+            (*XY3)--;
+    }
+}
+
+// Detetive Andy - Movimento3
+void movimentacao3() {
+    char tecla2;
+    tecla2 = getch();
+    switch (tecla2) {
+        case 'w':
+            if ((y3 == 1 && matriz3[0][15] == 'D') && (x3 != 15 || x3 == 15)) {
+            } else {
+                if (y3 == 1 && x3 != 15) {
+                } else {
+                    y3--;
+                    XMove3(x3, y3, &XX3, &XY3);
+                    if (y3 == 0 && x3 == 15) {
+                        fim3 = 1;
+                    } else {
+                        if (x3 == XX3 && y3 == XY3) {
+                            vidas--;
+                            x3 = 20;
+                            y3 = 20;
+                            chave3 = ' ';
+                            porta3 = 'D';
+                            botao3 = 'O';
+                            XX3 = 5;
+                            XY3 = 10;
+                            if (vidas == 0) {
+                                printf("\n\n");
+                                printf("\n\t\t\t\t\t\t VOCE FOI PEGO!");
+                                printf("\n");
+                                printf("\n\t\t\t\t\t\t Vex Vendetta: Nao a como escapar de mim Detetive Andy!");
+                                printf("\n\n");
+                                printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
+                                scanf("%d", &lixo);
+                                fim3 = 1;
+                                break;
+                            } else {
+                            }
+                        } else {
+                        }
+                        // verificar o dano do espinho
+                        if (matriz3[y3][x3] == espinho2) {
+                            printf("\t\t\t\t\t\tDetetive Andy: Ai! espinhos, devo tomar mais cuidado!\n");
+                            Sleep(900);
+                            vidas--;
+                            x3 = 20;
+                            y3 = 20;
+                            chave3 = ' ';
+                            porta3 = 'D';
+                            botao3 = 'O';
+                            XX3 = 5;
+                            XY3 = 10;
+                            if (vidas == 0) {
+                                printf("\n\n");
+                                printf("\n\t\t\t\t\t\t VOCE ESTA MUITO FERIDO!");
+                                printf("\n");
+                                printf("\n\t\t\t\t\t\t Vex Vendetta: Esta machucado demais para correr Detetive UHAHAHA!");
+                                printf("\n\n");
+                                printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
+                                scanf("%d", &lixo);
+                                fim3 = 1;
+                                break;
+                            } else {
+                            }
+                        }
+                    }
+                }
+            }
+            break;
+        case 's':
+            if (y3 == 38) {
+            } else {
+                y3++;
+                XMove3(x3, y3, &XX3, &XY3);
+                if (x3 == XX3 && y3 == XY3) {
+                    vidas--;
+                    x3 = 20;
+                    y3 = 20;
+                    chave3 = ' ';
+                    porta3 = 'D';
+                    botao3 = 'O';
+                    XX3 = 5;
+                    XY3 = 10;
+                    if (vidas == 0) {
+                        printf("\n\n");
+                        printf("\n\t\t\t\t\t\t VOCE FOI PEGO!");
+                        printf("\n");
+                        printf("\n\t\t\t\t\t\t Vex Vendetta: Nao a como escapar de mim Detetive Andy!");
+                        printf("\n\n");
+                        printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
+                        scanf("%d", &lixo);
+                        fim3 = 1;
+                        break;
+                    } else {
+                    }
+                } else {
+                }
+                // verificar o dano do espinho
+                if (matriz3[y3][x3] == espinho2) {
+                    printf("\t\t\t\t\t\tDetetive Andy: Ai! espinhos, devo tomar mais cuidado!\n");
+                    Sleep(900);
+                    vidas--;
+                    x3 = 20;
+                    y3 = 20;
+                    chave3 = ' ';
+                    porta3 = 'D';
+                    botao3 = 'O';
+                    XX3 = 5;
+                    XY3 = 10;
+                    if (vidas == 0) {
+                        printf("\n\n");
+                        printf("\n\t\t\t\t\t\t VOCE ESTA MUITO FERIDO!");
+                        printf("\n");
+                        printf("\n\t\t\t\t\t\t Vex Vendetta: Esta machucado demais para correr Detetive UHAHAHA!");
+                        printf("\n\n");
+                        printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
+                        scanf("%d", &lixo);
+                        fim3 = 1;
+                        break;
+                    } else {
+                    }
+                }
+            }
+            break;
+        case 'a':
+            if (x3 == 1) {
+            } else {
+                x3--;
+                XMove3(x3, y3, &XX3, &XY3);
+                if (x3 == XX3 && y3 == XY3) {
+                    vidas--;
+                    x3 = 20;
+                    y3 = 20;
+                    chave3 = ' ';
+                    porta3 = 'D';
+                    botao3 = 'O';
+                    XX3 = 5;
+                    XY3 = 10;
+                    if (vidas == 0) {
+                        printf("\n\n");
+                        printf("\n\t\t\t\t\t\t VOCE FOI PEGO!");
+                        printf("\n");
+                        printf("\n\t\t\t\t\t\t Vex Vendetta: Nao a como escapar de mim Detetive Andy!");
+                        printf("\n\n");
+                        printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
+                        scanf("%d", &lixo);
+                        fim3 = 1;
+                        break;
+                    } else {
+                    }
+                } else {
+                }
+                // verificar o dano do espinho
+                if (matriz3[y3][x3] == espinho2) {
+                    printf("\t\t\t\t\t\tDetetive Andy: Ai! espinhos, devo tomar mais cuidado!\n");
+                    Sleep(900);
+                    vidas--;
+                    x3 = 20;
+                    y3 = 20;
+                    chave3 = ' ';
+                    porta3 = 'D';
+                    botao3 = 'O';
+                    XX3 = 5;
+                    XY3 = 10;
+                    if (vidas == 0) {
+                        printf("\n\n");
+                        printf("\n\t\t\t\t\t\t VOCE ESTA MUITO FERIDO!");
+                        printf("\n");
+                        printf("\n\t\t\t\t\t\t Vex Vendetta: Esta machucado demais para correr Detetive UHAHAHA!");
+                        printf("\n\n");
+                        printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
+                        scanf("%d", &lixo);
+                        fim3 = 1;
+                        break;
+                    } else {
+                    }
+                }
+            }
+            break;
+        case 'd':
+            if (x3 == 38) {
+            } else {
+                x3++;
+                XMove3(x3, y3, &XX3, &XY3);
+                if (x3 == XX3 && y3 == XY3) {
+                    vidas--;
+                    x3 = 20;
+                    y3 = 20;
+                    chave3 = ' ';
+                    porta3 = 'D';
+                    botao3 = 'O';
+                    XX3 = 5;
+                    XY3 = 10;
+                    if (vidas == 0) {
+                        printf("\n\n");
+                        printf("\n\t\t\t\t\t\t VOCE FOI PEGO!");
+                        printf("\n");
+                        printf("\n\t\t\t\t\t\t Vex Vendetta: Nao a como escapar de mim Detetive Andy!");
+                        printf("\n\n");
+                        printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
+                        scanf("%d", &lixo);
+                        fim3 = 1;
+                        break;
+                    } else {
+                    }
+                } else {
+                }
+                // verificar o dano do espinho
+                if (matriz3[y3][x3] == espinho2) {
+                    printf("\t\t\t\t\t\tDetetive Andy: Ai! espinhos, devo tomar mais cuidado!\n");
+                    Sleep(900);
+                    vidas--;
+                    x3 = 20;
+                    y3 = 20;
+                    chave3 = ' ';
+                    porta3 = 'D';
+                    botao3 = 'O';
+                    XX3 = 5;
+                    XY3 = 10;
+                    if (vidas == 0) {
+                        printf("\n\n");
+                        printf("\n\t\t\t\t\t\t VOCE FOI PEGO!");
+                        printf("\n");
+                        printf("\n\t\t\t\t\t\t Vex Vendetta: Nao a como escapar de mim Detetive Andy!");
+                        printf("\n\n");
+                        printf("\n\t\t\t\t\t\tDigite 1 e pressione enter para continuar...");
+                        scanf("%d", &lixo);
+                        fim3 = 1;
+                        break;
+                    } else {
+                    }
+                }
+            }
+            break;
+  case 'i':
+            if (x3 == 35 && y3 == 35) { // Posição do teleporte
+                x3 = 3; // Nova posição X após o teleporte
+                y3 = 3; // Nova posição Y após o teleporte
+                printf("\n\n\n");
+                Sleep(20);
+                printf("\t\t\t\t\t\tUm duto secreto!\n");
+                Sleep(900);
+                system("cls");
+                system("color 0F");
+            } else if (x3 == 9 && y3 == 13) {
+                chave3 = '@';
+                botao3 = ' ';
+            } else if (x3 == 7 && y3 == 7 && chave3 == '@') {
+                printf("\n\n\n");
+                Sleep(20);
+                printf("\t\t\t\t\t\tDetetive Andy: Consegui a ultima chave, agora posso fugir daqui!\n");
+                 printf("\t\t\t\t\t\tVex Vendetta: MALDITO! VOCE NAO IRA FUGIR! \n");
+                Sleep(1700);
+                system("cls");
+                system("color 0F");
+                porta3 = '=';
+                chave3 = ' ';
+                break;
+            }
+            break;
+        default:
+            break;
+    }
+}
+
+  void Jogo() //Funcao das Fases
+{
+	while(fim1==0) //fase1
+	{	
+		
+		mapa1(matriz1,x,y,chave1,porta1,XY,XX);
+	   	
+		movimentacao1();	
+    	
+	}
+	
+		if(vidas==0){
+		return;
+	}
+	
+	while(fim2==0) //fase2
+	{
+		mapa2(matriz2,x2,y2,chave2,porta2,botao2,XY2,XX2,espinho2);
+
+		movimentacao2();
+	}
+	
+	if(vidas==0){
+		return;
+	}
+	
+	while(fim3==0) //dinamica da fase3
+	{
+		mapa3(matriz3,x3,y3,chave3,porta3,botao3,XY3,XX3,espinho2);
+
+		movimentacao3();
+	}
+	
+	if(vidas==0){
+		return;
+	}
+	
+			system("cls");
+		system("color 0E");
+		printf("\n\n\n\n\n\n\n");
+        printf("\t\t\t\t\t\t+-----------------------------------------------+\n");
+        printf("\t\t\t\t\t\t PARABENS VOCE CONSEGUIU ESCAPAR DO COVIL DO VEX!\n");
+        printf("\t\t\t\t\t\t+-----------------------------------------------+\n");
+system("pause");
+
+}
+
+
+	system("cls");//Pular Historia
+        	system("color 0B");
+        	char ph;
+    printf("\n\n\n\t\t\t\t\tDeseja pular a historia? (s/n): ");
+    ph = getch();
+
+    if (ph == 's') {
+        Jogo(); // Inicia o jogo diretamente
+    } else{
+	
+        	system("cls");
+			char abrir[] = "\n\n\n\n\n\n\n\n\t\t...Anotando Informacoes do Caso...Entrando no Veiculo...Indo ate o local informado...Iniciando a Investigacao... ";
+			
+			int a;
+		    for (a = 0; abrir[a] != '\0'; a++) {
+		        printf("%c", abrir[a]);
+		        fflush(stdout);
+		        usleep(20000);
+		    }
+		     Sleep(5000);
+		    system("cls");
+			Beep(700,700); 
+			historinha();
+			Jogo();		
+	}
+	}
+	
+
+
+void terminal()//VOID TERMINAL POLICIAL
+{//void
+
+while(op != 'f'){//TERMINAL POLICIAL - FICHAS CRIMANAIS
+system("cls");
+system("color 0A");
+printf("\n\n\n\n\n\n");
+printf("\t\t\t              ________________________________________________\n");
+printf("\t\t\t            /                                                \\\n");
+printf("\t\t\t           |    _________________________________________     |\n");
+printf("\t\t\t           |   |                                         |    |\n");
+printf("\t\t\t           |   |  Terminal Policial - Fichas Criminais   |    |\n");
+printf("\t\t\t           |   |  -------------------------------------  |    |\n");
+printf("\t\t\t           |   |                                         |    |\n");
+printf("\t\t\t           |   |          [v] Vex Vendetta               |    |\n");
+printf("\t\t\t           |   |          [x] Irmaos Xis e Xis           |    |\n");
+printf("\t\t\t           |   |                                         |    |\n");
+printf("\t\t\t           |   |                                         |    |\n");
+printf("\t\t\t           |   |          [f] Encerrar Terminal          |    |\n");
+printf("\t\t\t           |   |                                         |    |\n");
+printf("\t\t\t           |   |                                         |    |\n");
+printf("\t\t\t           |   |                                         |    |\n");
+printf("\t\t\t           |   |          [ ]selecione uma opcao         |    |\n");
+printf("\t\t\t           |   |_________________________________________|    |\n");
+printf("\t\t\t           |                                                  |\n");
+printf("\t\t\t            \\_________________________________________________/\n");
+printf("\t\t\t                   \\___________________________________/\n");
+printf("\t\t\t                ___________________________________________\n");
+printf("\t\t\t             _-'    .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.  --- `-_\n");
+printf("\t\t\t          _-'.-.-. .---.-.-.-.-.-.-.-.-.-.-.-.-.-.-.--.  .-.-.`-_\n");
+printf("\t\t\t       _-'.-.-.-. .---.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-`__`. .-.-.-.`-_\n");
+printf("\t\t\t    _-'.-.-.-.-. .-----.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-----. .-.-.-.-.`-_\n");
+printf("\t\t\t _-'.-.-.-.-.-. .---.-. .-------------------------. .-.---. .---.-.-.-.`-_\n");
+printf("\t\t\t:-------------------------------------------------------------------------:\n");
+printf("\t\t\t`---._.-------------------------------------------------------------._.---'\n");
+
+op = getch();
+if(op == 'f'){
+system("cls");
+system("color 0C");
+printf("\n\n\n\n\n\n");
+printf("\t\t\t              ________________________________________________\n");
+printf("\t\t\t            /                                                \\\n");
+printf("\t\t\t           |    _________________________________________     |\n");
+printf("\t\t\t           |   |                                         |    |\n");
+printf("\t\t\t           |   |                                         |    |\n");
+printf("\t\t\t           |   |                                         |    |\n");
+printf("\t\t\t           |   |                                         |    |\n");
+printf("\t\t\t           |   |                                         |    |\n");
+printf("\t\t\t           |   |                                         |    |\n");
+printf("\t\t\t           |   |           Terminal Encerrado...         |    |\n");
+printf("\t\t\t           |   |                                         |    |\n");
+printf("\t\t\t           |   |                                         |    |\n");
+printf("\t\t\t           |   |                                         |    |\n");
+printf("\t\t\t           |   |                                         |    |\n");
+printf("\t\t\t           |   |                                         |    |\n");
+printf("\t\t\t           |   |                                         |    |\n");
+printf("\t\t\t           |   |_________________________________________|    |\n");
+printf("\t\t\t           |                                                  |\n");
+printf("\t\t\t            \\_________________________________________________/\n");
+printf("\t\t\t                   \\___________________________________/\n");
+printf("\t\t\t                ___________________________________________\n");
+printf("\t\t\t             _-'    .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.  --- `-_\n");
+printf("\t\t\t          _-'.-.-. .---.-.-.-.-.-.-.-.-.-.-.-.-.-.-.--.  .-.-.`-_\n");
+printf("\t\t\t       _-'.-.-.-. .---.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-`__`. .-.-.-.`-_\n");
+printf("\t\t\t    _-'.-.-.-.-. .-----.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-----. .-.-.-.-.`-_\n");
+printf("\t\t\t _-'.-.-.-.-.-. .---.-. .-------------------------. .-.---. .---.-.-.-.`-_\n");
+printf("\t\t\t:-------------------------------------------------------------------------:\n");
+printf("\t\t\t`---._.-------------------------------------------------------------._.---'\n");
+Beep(300, 1000);
+}
+if(op == 'v'){//FICHA CRIMINAL DE VEX VENDETTA
+system("cls");
+ Beep(600, 700);
+		printf("\n");
+		printf("\n");
+		printf("\n");
+		printf("\n");
+	
+		printf("Resumo Criminal:\n");
+		printf("Codinome: Vex Vendetta\n");
+		printf("Descricao: Criminoso perigoso responsavel por sequestros e assassinatos brutais. Captura vitimas para jogos mortais, resultando frequentemente em morte.\n");
+
+		printf("Crimes Conhecidos:\n");
+		printf("- Sequestro\n");
+		printf("- Assassinato\n");
+		printf("- Tortura\n");
+		printf("- Extorsao\n");
+		printf("- Posse ilegal de armas\n");
+		printf("- Conspiracao para crimes violentos\n\n");
+
+		printf("Perfil Psicologico:\n");
+		printf("- Traços de psicopatia\n");
+		printf("- Falta de empatia e remorso\n");
+		printf("- Sadico, manipulador e controlador\n");
+		printf("- Encontra prazer em aterrorizar vítimas\n");
+		printf("- Habilidade em se esconder e evadir a detecção das autoridades\n\n");
+
+		printf("Marca Distintiva:\n");
+		printf("As vitimas de Vex Vendetta sao marcadas com um simbolo caracteristico, uma letra \"V\" estilizada, entrelacada em uma serpente, indicando sua autoria nos crimes.\n");
+		getch();
+            }//if
+
+if(op == 'x'){//FICHA CRIMINAL DE GEMEOS XIS
+system("cls");
+Beep(600, 700);
+		printf("\n");
+		printf("\n");
+		printf("\n");
+		printf("\n");
+		
+		printf("Resumo Criminal:\n");
+		printf("Nomes: Xis e Xis (conhecidos como \"Os Gemeos Xis\")\n");
+		printf("Descrição: Capangas leais de Vex Vendetta, envolvidos em seus crimes, incluindo sequestros, extorsoes e assassinatos.\n\n");
+		
+		printf("Atividades Conhecidas:\n");
+		printf("- Execucao de ordens criminosas de Vex Vendetta\n");
+		printf("- Vigilancia e segurança do covil de Vex\n");
+		printf("- Coacao de vitimas e extorsao\n");
+		printf("- Participação em ataques violentos contra rivais de Vex\n\n");
+		
+		printf("Descrição Fisica:\n");
+		printf("Os Gemeos Xis sao identicos em aparencia, tornando dificil distingui-los um do outro. Ambos sao altos, musculosos e intimidadores, geralmente vestidos de maneira similar, o que contribui para sua aura de misterio e ameaca.\n\n");
+		
+		printf("Perfil Psicologico:\n");
+		printf("Os Gemeos Xis compartilham uma mentalidade criminosa, demonstrando lealdade inabalavel a Vex Vendetta e um desejo de ascender dentro de sua organizacao. São individuos violentos e sem escrupulos, dispostos a realizar qualquer tarefa para garantir o favor de seu lider.\n\n");
+		
+		printf("Relação com Vex Vendetta:\n");
+		printf("Os Gemeos Xis são considerados os bracos direitos de Vex Vendetta, executando suas ordens com precisao e crueldade. Sua lealdade fanatica e habilidades brutais os tornam pecas-chave na operacao criminosa de Vex.\n");
+        getch();
+		    }//if
+
+}//while
+}//void
+
+void comissario()//VOID COMISSARIO
+{//void
+
+while(op != 'n'){//TERMINAL POLICIAL - FICHAS CRIMANAIS
+system("cls");
+
+printf("\n\n\n\n\n\n");
+    printf("\t\t\t  .--------------------.\n");
+    printf("\t\t\t  |   Detetive Andy!   |\n");
+    printf("\t\t\t  |Como posso ajuda-lo |        .--.--.\n");
+    printf("\t\t\t  |         ???        |      .; .;|;. ;.\n");
+    printf("\t\t\t  `-------------.  ,---'     .;_;'   `;_;.\n");
+    printf("\t\t\t                 \\|         ; ;'       `; ;\n");
+    printf("\t\t\t                  \\        ;;'.--.___.--.`;;\n");
+    printf("\t\t\t                           ;-(  o )=( o  )-;\n");
+    printf("\t\t\t                          (   `--' | `--'   )\n");
+    printf("\t\t\t                           \\|     . .     |/ \n");
+    printf("\t\t\t             ...........    .   .:::::.   .     .______\n");
+    printf("\t\t\t            /                .   '---`   .             '\\\n");
+    printf("\t\t\t          .'                 `.       .'                \\\n");
+    printf("\t\t\t           |        ____,.- . | `.....' |   _______      |\n");
+    printf("\t\t\t            |    ,-'          \\        /|\\''       \\.--  |\n");
+    printf("\t\t\t            |   /            \\.'\\     /,'.          \\. - |\n");
+    printf("\t\t\t            |  /|             `  `\\ /                 \\  |\n");
+    printf("\t\t\t           |  ,/      _           '/                  '\\ |\n");
+    printf("\t\t\t            ,-'     ,-.           |o                    '\n");
+    printf("\t\t\t           /         '|           |            | |       \\\n");
+    printf("\t\t\t          /         ,/|           |o           |  \\       `\n");
+    printf("\t\t\t         |        .'  |           |.'          |. \\        \\\n");
+    printf("\t\t\t_________/       .'____|________________________||__`.       `__________\n");
+    printf("\t\t\t       (         \\                        )        /         )MJP\n");
+    printf("\t\t\t        '-.       '-.                    (      .-`       .-`\n");
+    printf("\t\t\t           '-.    .-'--.__.             .-.__.--`-.    .-`\n");
+    printf("\t\t\t             '-..'     \\--'            : ~`:=,`-   `..-`\n");
+    printf("\t\t\t                 \\ ..  \\\\              |`-'|`-,    /\n");
+    printf("\t\t\t                  \\\\\\\\\\\\)             |   |`-'/.'/\n");
+    printf("\t\t\t                   \\)\\)\\\\               `-' `-' \n");
+    printf("\t\t\t----------------------------------------------------\n");
+   
+    printf("\t\t\t[c] Conversar sobre o Caso Vex\n");
+    printf("\t\t\t[t] Conversar sobre a testemunha\n");
+    printf("\t\t\t[n] despedir-se\n");
+    printf("\n\n");
+op = getch();
+
+if(op == 'n'){
+system("cls");
+system("color 04");
+printf("\n\n\n\n\n\n");
+    printf("\t\t\t  .--------------------.\n");
+    printf("\t\t\t  |       Certo!       |\n");
+    printf("\t\t\t  | Ate logo Detetive! |        .--.--.\n");
+    printf("\t\t\t  |         !!!        |      .; .;|;. ;.\n");
+    printf("\t\t\t  `-------------.  ,---'     .;_;'   `;_;.\n");
+    printf("\t\t\t                 \\|         ; ;'       `; ;\n");
+    printf("\t\t\t                  \\        ;;'.--.___.--.`;;\n");
+    printf("\t\t\t                           ;-(  o )=( o  )-;\n");
+    printf("\t\t\t                          (   `--' | `--'   )\n");
+    printf("\t\t\t                           \\|     . .     |/ \n");
+    printf("\t\t\t             ...........    .   .:::::.   .     .______\n");
+    printf("\t\t\t            /                .   '---`   .             '\\\n");
+    printf("\t\t\t          .'                 `.       .'                \\\n");
+    printf("\t\t\t           |        ____,.- . | `.....' |   _______      |\n");
+    printf("\t\t\t            |    ,-'          \\        /|\\''       \\.--  |\n");
+    printf("\t\t\t            |   /            \\.'\\     /,'.          \\. - |\n");
+    printf("\t\t\t            |  /|             `  `\\ /                 \\  |\n");
+    printf("\t\t\t           |  ,/      _           '/                  '\\ |\n");
+    printf("\t\t\t            ,-'     ,-.           |o                    '\n");
+    printf("\t\t\t           /         '|           |            | |       \\\n");
+    printf("\t\t\t          /         ,/|           |o           |  \\       `\n");
+    printf("\t\t\t         |        .'  |           |.'          |. \\        \\\n");
+    printf("\t\t\t_________/       .'____|________________________||__`.       `__________\n");
+    printf("\t\t\t       (         \\                        )        /         )MJP\n");
+    printf("\t\t\t        '-.       '-.                    (      .-`       .-`\n");
+    printf("\t\t\t           '-.    .-'--.__.             .-.__.--`-.    .-`\n");
+    printf("\t\t\t             '-..'     \\--'            : ~`:=,`-   `..-`\n");
+    printf("\t\t\t                 \\ ..  \\\\              |`-'|`-,    /\n");
+    printf("\t\t\t                  \\\\\\\\\\\\)             |   |`-'/.'/\n");
+    printf("\t\t\t                   \\)\\)\\\\               `-' `-' \n");
+    printf("\n\n\n\n\n\n");
+    Beep(100, 1000);
+            }
+
+if(op == 'c'){//FICHA CRIMINAL DE VEX VENDETTA
+system("cls");
+            printf("\n");
+			printf("Precione ENTER para continuar o dialogo\n");
+ 	void aguardarEnter() {
+    while(getchar() != '\n'); // Espera até que o usuário pressione ENTER
+}
+	printf("\n\n");
+    printf("Detetive Andy:\nComissario, alguma atualizacao sobre o Caso Vex?\n\n");
+    aguardarEnter();
+
+    printf("Comissario:\nAndy, recentemente conseguimos entrevistar uma das vitimas que conseguiu escapar do covil e obtivemos informacoes importantes que ajudara na investigacao, mas lembre-se! este e um caso grave. Estamos lidando com Vex Vendetta, um dos criminosos mais perigosos da cidade.\n\n");
+	aguardarEnter();
+
+    printf("Detetive Andy:\nPor isso preciso dete-lo Comissario! A testemunha contou sobre o lugar de onde escapou?\n\n");
+	aguardarEnter();
+
+    printf("Comissario:\nNão exatamente, mas temos um possivel paradeiro de Vex. Nao sabemos onde fica seu covil, mas o local fornecido pela vitima deve bastar, inicie a investigacao imediatamente! Verifique o Dossie que deixei na sua mesa, ha mais detalhes sobre o caso.\n\n");
+	aguardarEnter();
+
+    printf("Detetive Andy:\nOtimo, nao posso perde mais tempo, ate logo Comissario!\n");
+	aguardarEnter();
+
+    printf("Comissario:\nUma ultima coisa Detetive, cuidado com os capangas de Vex, conhecidos como os Gemeos Xis estao ajudando aquele desgraçado a fazer mais vitimas, nao conheço suas motivacoes mais mantenha-se alerta e evite ser detectado por eles, mandarei reforcos para acompanha-lo!.\n\n");
+	aguardarEnter();
+
+    printf("Detetive Andy:\nVoce sabe que trabalho melhor sozinho, Vex nao escapara novamente, irei encontrar seu verdadeiro covil e descobrir onde as vitimas estao sendo mantidas! nao aguento ficar parado vendo mais pessoas inocentes sofrendo nas maos desse maniaco!\n\n"); 
+	aguardarEnter();
+
+    printf("Comissario:\nGosto de sua determinacao mas não se arrisque demais, acione o Departamento quando conseguir acha-los!...Boa Sorte Detetive e que a Justica Prevaleca!");
+    aguardarEnter();
+    printf("\n\n\n");
+            }//if
+
+if(op == 't'){//FICHA CRIMINAL DE GEMEOS XIS
+system("cls");
+            printf("\n");
+			printf("Precione ENTER para continuar o dialogo\n");
+ 	void aguardarEnter() {
+    while(getchar() != '\n'); // Espera até que o usuário pressione ENTER
+}
+	printf("\n\n");
+    printf("Detetive Andy:\nComissario, como esta nossa testemunha?\n\n");
+    aguardarEnter();
+
+    printf("Comissario:\nDetetive, ela ainda esta se recuperando de tudo que aconteceu depois que escapou do Covil, nao diria que esta muito bem.\n\n");
+	aguardarEnter();
+
+    printf("Detetive Andy:\nCerto, ja conseguiram identifica-la?\n\n");
+	aguardarEnter();
+
+    printf("Comissario:\nSim, seu nome e Catarine Sharp, 42 anos, nao conseguimos puxar sua ficha completa, aparentemente ela nao tem nenhum historico ou dados no governo.\n\n");
+	aguardarEnter();
+
+    printf("Detetive Andy:\nEu gostaria de entrevista-la, mas estamos sem tempo!\n");
+	aguardarEnter();
+
+    printf("Comissario:\nCorreto Detetive!.\n\n");
+	aguardarEnter();
+    printf("\n\n\n");
+		    }//if
+
+}//while
+}//void
+
+
+while(op != 'd'){//MENU INICIAL DO JOGO	
+system("cls");
+system("color 0f");
+printf("\n\n\n\n");
+    printf("\t\t\t\t\t\t  +--------------------------------------+\n");
+    printf("\t\t\t\t\t\t  |        Detetive Andy e o Terrivel    |\n");
+    printf("\t\t\t\t\t\t  |               Covil de Vex           |\n");
+    printf("\t\t\t\t\t\t  +--------------------------------------+\n\n");
+    Beep(700, 700);
+    printf("\t\t\t\t\t\t----------------------------------------\n\n");
+    Sleep(300);
+    printf("\t\t\t\t\t\t  a)  Comecar a investigacao\n\n");
+    Sleep(300);
+    printf("\t\t\t\t\t\t  b)  Departamento Policial\n\n");
+    Sleep(300);
+    printf("\t\t\t\t\t\t  c)  Ler Dossie Completo  \n\n");
+    Sleep(300);
+    printf("\t\t\t\t\t\t  d)  Encerrar            \n\n");
+    Sleep(300);
+    printf("\t\t\t\t\t\t----------------------------------------\n");
+    Sleep(300);
+    printf("\n\t\t\t\t\t\t  Selecione uma opcao: ");
+op = getch();
+
+if(op == 'a'){
+	investigacao();
+}
+
+if(op == 'c'){
+				system("cls");
+			printf("\n");
+			printf("\n");
+			printf("\n");
+	printf("DOSSIE CRIMINAL\n\n");
+	printf("Caso: Operacao Vex Vendetta\n\n");
+	printf("Instrucoes para o Detetive Andy(&):\n\n");
+	printf("- Movimentacao: Utilize as teclas WASD para se deslocar durante a investigacao. \nPressione: \n'W' para cima, \n'A' para a esquerda, \n'S' para baixo e \n'D' para a direita.\n");
+	printf("- Interagir: Para interagir com objetos ou ambientes, pressione a tecla (I). Isso pode ser util para investigar pistas ou desbloquear portas.\n");
+	printf("- Furtividade: Mantenha-se furtivo e evite confrontos diretos com os capangas. Utilize o ambiente ao seu redor para se esconder e avancar sem ser detectado.\n");
+	printf("- O possivel covil de Vex pode esta localizado em uma area abandonada nos arredores da cidade, aqui estao as cordenadas 19.29024, -99.09677\n\n");
+	printf("Pista da Vitima:\n\n");
+	printf("Uma das vitimas que conseguiu escapar do covil de Vex Vendetta nos forneceu informacoes cruciais:\n\n");
+	printf("- (X) Os capangas: conhecidos como os Gemeos Xis, ficam a espreita mas normalmente se distraem pelo covil, tome cuidado Detetive\n");
+	printf("- (V) Vex: O criminoso principal deste caso. Ele e extremamente perigoso e ira persegui-lo implacavelmente se detectado.\n\n");
+	printf("- (@) Chaves de Acesso: As chaves marcadas com (@) sao essenciais para abrir portas trancadas (D) caso encontre podera acessa-las (=).\n\n");
+	printf("- (o) Botoes: Botoes que podem ser acionados, suas funcoes sao desconhecidas.\n");
+	printf("- (#) Espinhos: Representam perigos fisicos. Evite-os para nao se machucar.\n");
+	printf("- (*) As paredes: feitas de concreto sao impenetraveis.(*)\n");
+	printf("- (>) Dutos: Conduzem a diferentes areas do covil. Podem ser utilizados para se movimentar rapidamente ou encontrar pistas adicionais.\n\n");
+	printf("Aviso:\n\n");
+	printf("- Evite o confronto direto com os capangas sempre que possivel.\n");
+	printf("- Lembre-se de priorizar sua seguranca em todas as circunstancias.\n\n");
+	printf("Boa sorte, Detetive Andy. Que a justica prevaleca neste caso complicado.\n");
+	printf("\n");
+	printf("Ass: Comissario.\n");
+	system("pause>null");
+}
+
+if(op == 'd'){
+	//Encerra Jogo
+		system("cls");
+		system("color 0C");
+		printf("\n\n\n\n\n\n\n");
+        printf("\t\t\t\t\t\t+--------------------------------------+\n");
+        printf("\t\t\t\t\t\t    Comissario: Ate mais Detetive!\n");
+        printf("\t\t\t\t\t\t+--------------------------------------+\n");
+}
+
+if(op == 'b'){//Departamento Policial
+system("cls");
+system("color 0f");
+printf("\n\n\n\n");
+    printf("\t\t\t\t\t\t  +--------------------------------------+\n");
+    printf("\t\t\t\t\t\t  |         Departamento Policial        |\n");
+    printf("\t\t\t\t\t\t  |                                      |\n");
+    printf("\t\t\t\t\t\t  +--------------------------------------+\n\n");
+    Beep(700, 700);
+    printf("\t\t\t\t\t\t----------------------------------------\n\n");
+    Sleep(300);
+    printf("\t\t\t\t\t\t  c)  Conversar com o Comissario\n\n");
+    Sleep(300);
+    printf("\t\t\t\t\t\t  d)  Terminal de Dados da Policia\n\n");
+    Sleep(300);
+    printf("\t\t\t\t\t\t  r)  Retornar            \n\n");
+    Sleep(300);
+    printf("\t\t\t\t\t\t----------------------------------------\n");
+    Sleep(300);
+    printf("\n\t\t\t\t\t\t  Selecione uma opcao: ");
+dep = getch();
+
+if(dep == 'c'){
+system("cls");
+comissario();
+getch();
+}
+
+if(dep == 'd'){
+system("cls");
+terminal();
+getch();
+}
+
+}//if
+
+}//while
+
+}//Main
+
+
+
